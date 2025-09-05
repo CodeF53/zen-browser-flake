@@ -131,7 +131,10 @@ in
           "application/pdf"
           "application/json"
         ];
-        startupWMClass = binaryName;
+        startupWMClass =
+          if stdenv.hostPlatform.isDarwin
+          then "zen"
+          else binaryName;
         categories = ["Network" "WebBrowser"];
         startupNotify = true;
         terminal = false;
