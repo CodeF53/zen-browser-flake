@@ -48,7 +48,7 @@
   };
 
   firefoxPolicies =
-    (config.firefox.policies or {})
+    (config.programs.firefox.policies or {})
     // policies;
 
   policiesJson = writeText "firefox-policies.json" (builtins.toJSON {policies = firefoxPolicies;});
